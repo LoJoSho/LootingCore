@@ -1,0 +1,8 @@
+name: RapidzLootingCore
+version: ${project.version}
+main: me.lojosho.rapidzlootingcore.RapidzLootingCore
+api-version: 1.16
+authors: [ LoJoSho ]
+description: RapidzTheftAuto Looting Chests
+depend:
+  - Vault
