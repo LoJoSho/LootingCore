@@ -1,6 +1,7 @@
 package me.lojosho.rapidzlootingcore;
 
 import me.lojosho.rapidzlootingcore.Listener.ChestLooting;
+import me.lojosho.rapidzlootingcore.lootables.LootablesPistols;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Location;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -42,4 +43,5 @@ public final class RapidzLootingCore extends JavaPlugin {
     }
 
     public HashMap<Location, Long> cooldowns = new HashMap<>();
+
 }
