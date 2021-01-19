@@ -53,11 +53,13 @@ public class ChestLooting implements Listener {
                     CustomBaseObject g = QualityArmory.getCustomItemByName(AmmoGotten);
                     int amount = AmmoLoot.RandomAmmoInteger();
                     QualityArmory.addAmmoToInventory(event.getPlayer(), (Ammo) g, amount);
+                    event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', "&7You have gotten &6" + amount + " &7of &a" + AmmoGotten));
                     if (randompistol >= 1 && randompistol <= 25) {
                         CustomBaseObject gp = QualityArmory.getCustomItemByName(PistolGotten);
                         temp = CustomItemManager.getItemType("gun").getItem(gp.getItemData().getMat(), gp.getItemData().getData(), gp.getItemData().getVariant());
                         temp.setAmount(gp.getCraftingReturn());
                         Inv.addItem(temp);
+                        event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', "&7You have gotten &6&l" + PistolGotten));
                     }
                 } else if (System.currentTimeMillis() - plugin.cooldowns.get(event.getClickedBlock().getLocation()) < intcooldown) {
                     int seconds = (int) (System.currentTimeMillis() - plugin.cooldowns.get(event.getClickedBlock().getLocation())) / 1000; // Coverts to seconds
