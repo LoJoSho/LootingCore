@@ -1,7 +1,6 @@
 package me.lojosho.rapidzlootingcore;
 
 import me.lojosho.rapidzlootingcore.Listener.ChestLooting;
-import me.lojosho.rapidzlootingcore.lootables.LootablesPistols;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Location;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -17,7 +16,6 @@ public final class RapidzLootingCore extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
         if (!setupEconomy() ) {
             log.severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);

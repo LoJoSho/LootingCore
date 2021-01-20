@@ -37,7 +37,7 @@ public class ChestLooting implements Listener {
         double GivenMoney = RandomMoney();
         Long defaultLong = 0L;
         Inventory Inv = event.getPlayer().getInventory();
-        int randompistol = RandomInt();
+        int RandomInt = RandomInt();
         String AmmoGotten = AmmoLoot.AmmoLootable();
         String PistolGotten = PistolLoot.PistolLootable();
 
@@ -53,13 +53,22 @@ public class ChestLooting implements Listener {
                     CustomBaseObject g = QualityArmory.getCustomItemByName(AmmoGotten);
                     int amount = AmmoLoot.RandomAmmoInteger();
                     QualityArmory.addAmmoToInventory(event.getPlayer(), (Ammo) g, amount);
-                    event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', "&7You have gotten &6" + amount + " &7of &a" + AmmoGotten));
-                    if (randompistol >= 1 && randompistol <= 25) {
+                    event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', "&7You have gotten &6" + amount + " &7of &a" + AmmoGotten + " &7ammo"));
+                    // Suggested: 10% Pistol, 5% Armor, 2% Rifle,
+                    if (RandomInt >= 1 && RandomInt <= 25) {
                         CustomBaseObject gp = QualityArmory.getCustomItemByName(PistolGotten);
                         temp = CustomItemManager.getItemType("gun").getItem(gp.getItemData().getMat(), gp.getItemData().getData(), gp.getItemData().getVariant());
                         temp.setAmount(gp.getCraftingReturn());
                         Inv.addItem(temp);
-                        event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', "&7You have gotten &6&l" + PistolGotten));
+                        event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', "&7You have gotten a &6&l" + PistolGotten + " &7pistol"));
+                    }
+                    // rifles
+                    if (RandomInt >= 26 && RandomInt <= 50) {
+                        CustomBaseObject gp = QualityArmory.getCustomItemByName(PistolGotten);
+                        temp = CustomItemManager.getItemType("gun").getItem(gp.getItemData().getMat(), gp.getItemData().getData(), gp.getItemData().getVariant());
+                        temp.setAmount(gp.getCraftingReturn());
+                        Inv.addItem(temp);
+                        event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', "&7You have gotten a &6&l" + PistolGotten + " &7pistol"));
                     }
                 } else if (System.currentTimeMillis() - plugin.cooldowns.get(event.getClickedBlock().getLocation()) < intcooldown) {
                     int seconds = (int) (System.currentTimeMillis() - plugin.cooldowns.get(event.getClickedBlock().getLocation())) / 1000; // Coverts to seconds
