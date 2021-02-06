@@ -7,3 +7,4 @@ description: RapidzTheftAuto Looting Chests
 depend:
   - Vault
   - QualityArmory
+  - CMI

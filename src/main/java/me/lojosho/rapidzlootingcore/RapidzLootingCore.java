@@ -12,15 +12,14 @@ import java.util.logging.Logger;
 public final class RapidzLootingCore extends JavaPlugin {
 
     private static Economy econ = null;
-    private static final Logger log = Logger.getLogger("Minecraft");
+    private static final Logger log = Logger.getLogger("RapidzCore");
 
     @Override
     public void onEnable() {
         if (!setupEconomy() ) {
             log.severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);
-            return;
-        }
+            return; }
         getServer().getPluginManager().registerEvents(new ChestLooting(this), this);
     }
 

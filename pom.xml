@@ -6,7 +6,7 @@
 
     <groupId>me.LoJoSho</groupId>
     <artifactId>RapidzLootingCore</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
     <name>RapidzLootingCore</name>
@@ -89,6 +89,13 @@
             <artifactId>VaultAPI</artifactId>
             <version>1.7</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.Zrips</groupId>
+            <artifactId>CMI</artifactId>
+            <version>7.6.2.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/CMI8.8.0.4.jar</systemPath>
         </dependency>
     </dependencies>
 </project>
